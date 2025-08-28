@@ -60,6 +60,11 @@ Ensure that your `.env` file is created with the necessary SMTP settings before 
 
 ---
 
+## Sample
+<img width="1001" height="602" alt="Screenshot 2025-08-29 at 05 00 20" src="https://github.com/user-attachments/assets/3130069c-9d94-46e5-aa16-9da167bb4d54" />
+<img width="445" height="31" alt="Screenshot 2025-08-29 at 05 03 02" src="https://github.com/user-attachments/assets/93070c22-fda5-4a7c-8f5a-3ecc2b136d21" />
+<img width="828" height="85" alt="Screenshot 2025-08-29 at 05 03 11" src="https://github.com/user-attachments/assets/d28d8adc-42c7-4aee-8b01-0f185fbe6f68" />
+
 ## Future Enhancements
 - Add GUI (JavaFX / Swing) for better user experience.  
 - Build REST API with Spring Boot for integration with web apps.  

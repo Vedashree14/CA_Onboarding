@@ -55,11 +55,11 @@ public class EmailService {
             msg.setText(emailContent);
     
             Transport.send(msg);
-            System.out.println("✅ Welcome email sent successfully to " + toEmail);
+            System.out.println("Welcome email sent successfully to " + toEmail);
     
         } catch (MessagingException e) {
             e.printStackTrace();
-            System.out.println("❌ Failed to send email to " + toEmail);
+            System.out.println("Failed to send email to " + toEmail);
         }
     }
     

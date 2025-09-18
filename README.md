@@ -1,47 +1,64 @@
-# CA Onboarding 
+# CA Onboarding Automation (Java)
 
-A simple **Community Ambassador (CA) onboarding system** that:  
-- Generates **unique UTM links** for each ambassador.  
-- Saves ambassador details into a **SQLite database**.  
-- Sends a **welcome email** with the UTM link.  
-- Displays a **summary dashboard** in the terminal.  
+This project was developed as part of my internship at **Cloud Counselage**.  
+It automates the Community Ambassador (CA) onboarding process for the **Industry Academia Community (IAC)** with UTM tracking, database persistence, and email automation.
+
+---
+
+## Background
+Community Ambassadors (CAs) are the face of Industry Academia Community (IAC).  
+They help students discover opportunities to become job-ready in time.  
+
+To measure each ambassador’s contribution, every CA is provided with a unique UTM link.  
+These links allow IAC to track traffic, engagement, and conversions driven by each ambassador.
+
+---
+
+## Objectives
+This project automates the CA onboarding workflow by:
+1. Generating a unique UTM link with:
+   - `utm_source` → CA name  
+   - `utm_medium` → ambassador  
+   - `utm_campaign` → monthly auto-updated campaign (e.g., `IAC_CA_2025_09`)  
+   - `utm_id` → unique UUID segment  
+2. Sending a personalized welcome email with the UTM link.  
+3. Storing CA details (name, email, UTM parameters, and link) in SQLite.  
+4. Displaying an onboarding dashboard summary in the CLI.  
+5. Running automated tests to validate workflows.  
 
 ---
 
 ## Features
-- **UTM Link Generator**  
-  - Auto-creates `utm_source`, `utm_medium`, `utm_campaign`, and `utm_id`.  
-  - Campaign auto-updates **monthly** (e.g., `IAC_CA_2025_09`).  
-
-- **Database Integration**  
-  - Uses **SQLite** to persist CA details.  
-  - Schema includes name, email, UTM parameters, and generated link.  
-
-- **Email Service**  
-  - Sends a personalized **welcome email** with the UTM link.  
-  - Uses **Jakarta Mail** + Gmail SMTP.  
-
-- **Unit Tests**  
-  - JUnit tests included for UTM generation logic.  
+- Dynamic UTM Generation → Every CA gets a unique link with monthly campaigns auto-updating.  
+- Database Persistence → CA details stored in SQLite for future analytics.  
+- Email Automation → Sends onboarding emails via SMTP (Jakarta Mail API).  
+- Onboarding Dashboard → Displays CA details and generated UTM link in the terminal.  
+- Testing Suite → JUnit tests validate UTM logic and onboarding flow.  
 
 ---
 
-## Project Structure
-src/main/java/org/example/
-├── DatabaseService.java # SQLite DB handler
-├── EmailService.java # Sends onboarding emails
-├── Main.java # CLI for onboarding ambassadors
-src/test/java/
-└── CATestCases.java # Unit tests for UTM generation
-
 ## Tech Stack
-- Java 17+  
+- Java (JDK 17+)  
+- Maven  
 - SQLite (via JDBC)  
-- Jakarta Mail  
-- JUnit 5 (for testing)
+- Jakarta Mail (SMTP with Gmail)  
+- Dotenv (for `.env` secrets)  
+- JUnit 5  
+
+---
+
+## How It Works
+1. The CA enters their name and email address.  
+2. The system generates a unique UTM link with monthly auto-updating campaign.  
+3. The CA’s details are stored in SQLite.  
+4. A welcome email (with UTM link) is sent automatically.  
+5. A CLI dashboard summary confirms details.  
+
+---
 
 ## Future Enhancements
 
-- Add a leaderboard dashboard to rank ambassadors by traffic/signups.
-- Integrate with Google Analytics for real-time performance tracking.
-- Build a web-based admin panel.
+- Add leaderboard dashboard to rank CAs by traffic/signups.
+- Integrate with Google Analytics for real-time tracking.
+- Build a Spring Boot REST API for integration with web apps.
+- Add JavaFX GUI for user-friendly onboarding.
